@@ -13,5 +13,10 @@ public class CreditCard extends Card{
         balance = balance.subtract(money);
     }
 
-
+    @Override
+    public String toString() {
+        return "CreditCard{" +
+                "balance=" + balance +
+                '}';
+    }
 }

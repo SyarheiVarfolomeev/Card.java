@@ -20,6 +20,10 @@ public class DebitCard extends Card{
         }
     }
 
-
-
+    @Override
+    public String toString() {
+        return "DebitCard{" +
+                "balance=" + balance +
+                '}';
+    }
 }

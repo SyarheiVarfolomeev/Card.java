@@ -2,6 +2,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 public abstract class Card {
+
     private String name;
     protected BigDecimal balance;
 
