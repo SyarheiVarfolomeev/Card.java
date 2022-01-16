@@ -1,6 +1,7 @@
 import java.math.BigDecimal;
 
 public class CreditCard extends Card{
+
     public CreditCard(String name, BigDecimal balance){
         super(name, balance);
     }
@@ -8,6 +9,7 @@ public class CreditCard extends Card{
     public CreditCard(String name){
         super(name);
     }
+
     @Override
     public void subtractMoney(BigDecimal money) {
         balance = balance.subtract(money);
@@ -16,7 +18,8 @@ public class CreditCard extends Card{
     @Override
     public String toString() {
         return "CreditCard{" +
-                "balance=" + balance +
+                "name='" + name + '\'' +
+                ", balance=" + balance +
                 '}';
     }
 }

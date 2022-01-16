@@ -1,17 +1,23 @@
 import java.math.BigDecimal;
 import java.util.Objects;
+import Exception.InsufficientFundsException;
+import Exception.InvalidDataException;
 
 public class ATM {
     private Card card;
 
-
     public ATM(Card card) {
+        validateInputDate(card);
         this.card = card;
-
     }
 
     public void addATM(BigDecimal money){
-        card.add(money);
+        try {
+            card.add(money);
+        }
+        catch (NullPointerException e){
+            e.printStackTrace();
+        }
     }
 
     public void subtractMoneyATM(BigDecimal money) {
@@ -22,6 +28,15 @@ public class ATM {
         }
     }
 
+    public BigDecimal  exchangeATM(BigDecimal  rate) {
+    return card.exchange(rate);
+    }
+
+    private void validateInputDate(Card card) {
+        if (card == null) {
+            throw new InvalidDataException("Card is null");
+        }
+    }
     @Override
     public String toString() {
         return "ATM{" +
