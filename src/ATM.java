@@ -12,12 +12,7 @@ public class ATM {
     }
 
     public void addATM(BigDecimal money){
-        try {
             card.add(money);
-        }
-        catch (NullPointerException e){
-            e.printStackTrace();
-        }
     }
 
     public void subtractMoneyATM(BigDecimal money) {
@@ -29,7 +24,7 @@ public class ATM {
     }
 
     public BigDecimal  exchangeATM(BigDecimal  rate) {
-    return card.exchange(rate);
+        return card.exchange(rate);
     }
 
     private void validateInputDate(Card card) {
@@ -37,6 +32,7 @@ public class ATM {
             throw new InvalidDataException("Card is null");
         }
     }
+
     @Override
     public String toString() {
         return "ATM{" +
