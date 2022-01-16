@@ -1,11 +1,14 @@
 import java.math.BigDecimal;
 import java.util.Objects;
+import Exception.InsufficientFundsException;
 
 public abstract class Card {
-    private String name;
+
+    protected String name;
     protected BigDecimal balance;
 
     public Card(String name) {
+        this.balance = BigDecimal.ZERO;
         this.name = name;
     }
 
